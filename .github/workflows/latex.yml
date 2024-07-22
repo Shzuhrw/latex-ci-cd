@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # تحديث إلى v4
 
       - name: Set up TeX Live
         run: |
@@ -31,7 +31,7 @@ jobs:
           mv main.pdf docs/
 
       - name: Upload PDF as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # تحديث إلى v4
         with:
           name: document
           path: docs/main.pdf
