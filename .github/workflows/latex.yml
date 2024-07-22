@@ -24,14 +24,18 @@ jobs:
       - name: Compile LaTeX file
         run: |
           pdflatex main.tex
-          
-      - name: Move PDF to docs directory
+
+      - name: Create docs directory and move PDF
         run: |
           mkdir -p docs
           mv main.pdf docs/
 
-      - name: Upload PDF as artifact
-        uses: actions/upload-artifact@v4 #
-        with:
-          name: document
-          path: docs/main.pdf
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "zumor.shadi@gmail.com"
+          git config --global user.name "Shadi"
+          git add docs/main.pdf
+          git commit -m "Add generated PDF"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
