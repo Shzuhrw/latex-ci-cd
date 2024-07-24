@@ -30,17 +30,12 @@ jobs:
           mkdir -p docs
           mv main.pdf docs/
 
-   - name: Commit and push changes
-  run: |
-    git config --global user.email "Shadi.Zumor@hs-ruhrwest.de"
-    git config --global user.name "Your Name"
-    git add docs/main.pdf
-    git commit -m "Add generated PDF"
-    git push
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-
-
-
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "Your Name"
+          git add docs/main.pdf
+          git commit -m "Add generated PDF"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
