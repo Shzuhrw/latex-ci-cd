@@ -32,8 +32,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.email "your-email@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "Shadi.Zumor@hs-ruhrwest.de"
+          git config --global user.name "Shzuhrw"
           git add docs/main.pdf
           git commit -m "Add generated PDF"
           git push
